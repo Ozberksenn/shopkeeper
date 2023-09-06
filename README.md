@@ -1,4 +1,18 @@
 # Shopkeeper App
+## Flutter Project
+<h3>packages</h3>
+<ul>
+  <li>upertino_icons: ^1.0.2</li>
+  <li>get: ^4.6.5</li>
+  <li>carousel_slider: ^4.2.1</li>
+  <li>font_awesome_flutter: ^10.5.0</li>
+  <li>http: ^1.1.0</li>
+  <li>flutter_form_builder: ^9.1.0</li>
+  <li>form_builder_validators: ^9.0.0</li>
+  <li>get_storage: ^2.1.1</li>
+  <li>intl: ^0.18.0</li>
+</ul>
+
 <table>
   <tr>
     <h3>Login Pages</h3>
