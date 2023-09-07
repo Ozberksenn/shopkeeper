@@ -49,12 +49,14 @@ class ProfileView extends StatelessWidget {
               },
               icon: const Icon(Icons.login_outlined),
               name: 'Log Out'),
-          Obx(() => Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 24.0),
-                child: Text(
-                    'Application Registration Date :  ${DateFormat("yyyy-MM-d").format(loginController.userInfo[0].createdOn as DateTime)}'),
-              ))
+          Obx(() => loginController.userInfo.isNotEmpty
+              ? Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 24.0),
+                  child: Text(
+                      'Application Registration Date :  ${DateFormat("yyyy-MM-d").format(loginController.userInfo[0].createdOn as DateTime)}'),
+                )
+              : Container())
         ],
       ),
     );
