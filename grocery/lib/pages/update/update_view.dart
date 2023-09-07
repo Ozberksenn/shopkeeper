@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
+import 'package:grocery/pages/Profile/profile_controller.dart';
 import 'package:grocery/pages/auth/widgets/text_input_widget.dart';
-import '../../services/services.dart';
 import '../../widgets/appBar_widget.dart';
 
 class UpdateView extends StatelessWidget {
   UpdateView({super.key});
   final formKey = GlobalKey<FormBuilderState>();
-  final databaseServices = DatabaseServices();
+  ProfileController controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +44,7 @@ class UpdateView extends StatelessWidget {
                               "name": name,
                               "password": password
                             };
-                            databaseServices.upload(values);
+                            controller.upload(values);
                           } else {
                             debugPrint('Validation Filed');
                           }

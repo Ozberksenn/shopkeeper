@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
-import 'package:grocery/controller/auth_controller.dart';
+import 'package:grocery/pages/auth/login_controller.dart';
 import 'package:grocery/services/services.dart';
 import 'package:grocery/theme/light_theme.dart';
 import 'package:grocery/utils/app_routes.dart';
 import 'widgets/register_form_widget.dart';
 
 class RegisterView extends StatelessWidget {
-  const RegisterView({super.key});
+  RegisterView({super.key});
+  final formKey = GlobalKey<FormBuilderState>();
+  final databaseServices = DatabaseServices();
+  LoginController get controller => Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
-    final formKey = GlobalKey<FormBuilderState>();
-    final AuthController authController = Get.put(AuthController());
-    final databaseServices = DatabaseServices();
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -57,7 +57,7 @@ class RegisterView extends StatelessWidget {
                   ),
                 ],
               ),
-              registerFormWidget(formKey, authController, databaseServices),
+              registerFormWidget(formKey, controller, databaseServices),
             ],
           )
         ],

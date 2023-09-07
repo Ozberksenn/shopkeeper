@@ -7,7 +7,7 @@ import 'package:grocery/utils/app_routes.dart';
 
 routes() => [
       GetPage(name: AppRoutes.login, page: () => const LoginView()),
-      GetPage(name: AppRoutes.register, page: () => const RegisterView()),
+      GetPage(name: AppRoutes.register, page: () => RegisterView()),
       GetPage(name: AppRoutes.home, page: () => HomeView()),
       GetPage(name: AppRoutes.update, page: () => UpdateView())
     ];

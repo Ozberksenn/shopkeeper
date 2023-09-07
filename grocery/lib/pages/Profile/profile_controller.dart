@@ -33,6 +33,23 @@ class ProfileController extends GetxController {
     }
   }
 
+  Future<void> upload(values) async {
+    var client = http.Client();
+    try {
+      var response = await client.post(
+          Uri.parse('http://localhost:3000/update'),
+          headers: {},
+          body: values);
+      if (response.statusCode == 200) {
+        debugPrint('Güncellendi.');
+      } else {
+        debugPrint('bir şeyler ters gitti.');
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   void onClose() {
     super.onClose();

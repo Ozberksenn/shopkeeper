@@ -33,18 +33,4 @@ class ProductsModel {
     menuName = json['menu_name'] as String;
     isBasket = json['is_basket'] as bool;
   }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['product_id'] = productId;
-    data['product_name'] = productName;
-    data['product_image'] = productImage;
-    data['product_price'] = productPrice;
-    data['product_count'] = productCount?.value;
-    data['product_info'] = productInfo;
-    data['menu_id'] = menuId;
-    data['menu_name'] = menuName;
-    data['is_basket'] = isBasket;
-    return data;
-  }
 }

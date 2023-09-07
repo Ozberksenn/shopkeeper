@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:grocery/pages/auth/login_controller.dart';
 import 'package:grocery/pages/auth/widgets/text_input_widget.dart';
 import 'package:grocery/utils/app_routes.dart';
-
+import 'package:grocery/utils/utils.dart';
 import '../../theme/light_theme.dart';
 
 class LoginView extends StatelessWidget {
@@ -14,9 +14,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<FormBuilderState> formKey = GlobalKey<FormBuilderState>();
-    // AuthController authController = Get.put(AuthController());
     LoginController controller = Get.put(LoginController());
-    // final databaseServices = DatabaseServices();
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -82,7 +80,7 @@ class LoginView extends StatelessWidget {
                               controller.loginUser(
                                   formKey.currentState?.value as Map);
                             } else {
-                              debugPrint('Validation Filed');
+                              showWarning('Error Login');
                             }
                           },
                           child: const Text('Mağza Girişi'))
