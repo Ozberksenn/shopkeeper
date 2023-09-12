@@ -8,7 +8,7 @@ import '../../widgets/appBar_widget.dart';
 class UpdateView extends StatelessWidget {
   UpdateView({super.key});
   final formKey = GlobalKey<FormBuilderState>();
-  ProfileController controller = Get.find();
+  final ProfileController controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
