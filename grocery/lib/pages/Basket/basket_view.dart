@@ -45,9 +45,7 @@ class BasketView extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: TextField(
-                              onChanged: (value) {
-                                // controller.orderDescription.value = value;
-                              },
+                              onChanged: (value) {},
                               decoration: const InputDecoration(
                                   hintText: 'Açıklama Giriniz'),
                               maxLines: 2,
@@ -59,7 +57,9 @@ class BasketView extends StatelessWidget {
                           width: Get.width / 1.1,
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(),
-                              onPressed: () {},
+                              onPressed: () {
+                                controller.handleCheckout();
+                              },
                               child: const Text(
                                 'Checkout',
                                 style: TextStyle(color: Colors.white),

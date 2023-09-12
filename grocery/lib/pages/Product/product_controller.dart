@@ -7,7 +7,8 @@ import '../../model/products_model.dart';
 class ProductController extends GetxController {
   RxList<ProductsModel> mainProductsData =
       <ProductsModel>[].obs; // product data.
-  RxList<ProductsModel> basketList = <ProductsModel>[].obs;
+  RxList<ProductsModel> basketList =
+      <ProductsModel>[].obs; // sepete eklenenlerib listesi.
 
   @override
   void onInit() {
@@ -51,6 +52,17 @@ class ProductController extends GetxController {
       data.productCount = data.productCount! - 1;
     } else {
       showAlert('Bu üründen spetinizde 1 adetten daha az olamaz.');
+    }
+  }
+
+  void handleCheckout() {
+    ProductsModel? product = mainProductsData.firstWhereOrNull((element) {
+      return element.isBasket == true;
+    });
+    product?.isBasket = false;
+    basketList.value = [];
+    if (basketList.isEmpty == true) {
+      showSuccess('Siparişiniz Oluşturulmuştur.');
     }
   }
 

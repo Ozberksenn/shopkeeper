@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grocery/model/products_model.dart';
 import 'package:grocery/pages/Product/product_controller.dart';
+import 'package:grocery/utils/utils.dart';
 import 'product_card.dart';
 
 Widget categoryContent(String category) {
@@ -26,7 +27,7 @@ Widget categoryContent(String category) {
                     if (product.isBasket == false) {
                       controller.handleAdd(product);
                     } else {
-                      print('Bu ürün sepetinizde mevcut.');
+                      showWarning('Bu ürün sepetinizde mevcut.');
                     }
                   },
                   icon: product.isBasket == false ? Icons.add : Icons.check,

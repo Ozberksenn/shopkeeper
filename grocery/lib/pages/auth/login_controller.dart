@@ -48,7 +48,12 @@ class LoginController extends GetxController {
         String token = jsonResponse['token'];
         tokenInfo = token;
         if (tokenInfo.isNotEmpty) {
-          init();
+          // init();
+          List jsonData = jsonResponse['data'];
+          List<UserModel> userInfoList = jsonData
+              .map((e) => UserModel.fromJson(e as Map<String, dynamic>))
+              .toList();
+          userInfo.value = userInfoList;
           showSuccess('Success Login :)');
           Get.toNamed(AppRoutes.home);
         }
@@ -60,24 +65,23 @@ class LoginController extends GetxController {
     }
   }
 
-  void init() async {
-    debugPrint("init oldu");
-    var url = Uri.http('localhost:3000', '/me');
-    try {
-      var response =
-          await http.get(url, headers: {'Authorization': 'Bearer $tokenInfo'});
-      if (response.statusCode == 200) {
-        var jsonResponse = json.decode(response.body);
-        List jsonData = jsonResponse['data'];
-        List<UserModel> userInfoList = jsonData
-            .map((e) => UserModel.fromJson(e as Map<String, dynamic>))
-            .toList();
-        userInfo.value = userInfoList;
-      } else {
-        showWarning('Status Code error');
-      }
-    } catch (e) {
-      showWarning(e.toString());
-    }
-  }
+  // void init() async {
+  //   var url = Uri.http('localhost:3000', '/login');
+  //   try {
+  //     var response =
+  //         await http.get(url, headers: {'Authorization': 'Bearer $tokenInfo'});
+  //     if (response.statusCode == 200) {
+  //       var jsonResponse = json.decode(response.body);
+  //       List jsonData = jsonResponse['data'];
+  //       List<UserModel> userInfoList = jsonData
+  //           .map((e) => UserModel.fromJson(e as Map<String, dynamic>))
+  //           .toList();
+  //       userInfo.value = userInfoList;
+  //     } else {
+  //       showWarning('Status Code error');
+  //     }
+  //   } catch (e) {
+  //     showWarning(e.toString());
+  //   }
+  // }
 }

@@ -23,7 +23,6 @@ const register = (req, res) => {
 
 const login = (req, res) => {
   const { email, password } = req.body;
-  console.log(email, password);
   const query = "SELECT * FROM users WHERE email = $1 AND password = $2";
   const values = [email, password];
   pool.query(query, values, (error, result) => {

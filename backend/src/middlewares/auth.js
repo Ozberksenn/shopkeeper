@@ -14,6 +14,7 @@ const createToken = async (user, res) => {
   return res.status(201).json({
     success: true,
     token,
+    data: user,
     messages: "Başarılı",
   });
 };
