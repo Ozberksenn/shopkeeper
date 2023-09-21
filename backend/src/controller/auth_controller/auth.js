@@ -90,4 +90,23 @@ const me = async (req, res) => {
   });
 };
 
-module.exports = { register, login, update, deleteUser, me };
+const usersInfo = (req, res) => {
+  const query = "SELECT * FROM users";
+  pool.query(query, (error, result) => {
+    if (error) {
+      return res.status(400).json({
+        statusCode: res.statusCode,
+        message: "İşlem Başarısız",
+        data: error,
+      });
+    } else {
+      return res.status(200).json({
+        statusCode: res.statusCode,
+        message: "Başarılı",
+        data: result.rows,
+      });
+    }
+  });
+};
+
+module.exports = { register, login, update, deleteUser, me, usersInfo };
