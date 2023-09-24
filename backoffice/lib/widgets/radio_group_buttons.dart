@@ -10,7 +10,7 @@ Widget radioGroupButtons({required String name}) {
       padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 6),
       child: FormBuilderRadioGroup(
           decoration: const InputDecoration(border: InputBorder.none),
-          name: 'menu_id',
+          name: name,
           options: controller.menuDataList.map((i) {
             return FormBuilderFieldOption(
               value: i.menuId,

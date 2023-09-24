@@ -32,16 +32,19 @@ class HomeView extends StatelessWidget {
                                     height: 40,
                                     child: Row(
                                       children: [
-                                        headersButton(btnName: 'Düzenle'),
+                                        headersButton(
+                                            clickId: 1, btnName: 'Düzenle'),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(
                                               horizontal: 8.0),
                                           child: headersButton(
+                                              clickId: 0,
                                               btnName: 'Ekle',
                                               icon: Icons.add,
                                               iconColor: Colors.green),
                                         ),
                                         headersButton(
+                                            clickId: 2,
                                             btnName: 'Sil',
                                             icon: Icons.remove_circle,
                                             iconColor: Colors.red),

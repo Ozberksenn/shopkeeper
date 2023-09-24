@@ -33,8 +33,16 @@ app.post("/delete", authController.deleteUser);
 
 app.get("/products", productsController.products);
 
+app.post("/newProduct", productsController.newProduct);
+
 app.get("/me", tokenCheck, authController.me);
 
 app.get("/users", authController.usersInfo);
 
 app.get("/menu", menuController.menu);
+
+app.post("/addNewMenu", menuController.addNewMenu);
+
+app.post("/updateMenu", menuController.updateMenu);
+
+app.post("/deleteMenu", menuController.deleteMenu);
