@@ -1,11 +1,14 @@
 import 'package:backoffice/pages/form/form_controller.dart';
+import 'package:backoffice/widgets/custom_button.dart';
+import 'package:backoffice/widgets/disabled_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
 import '../../../widgets/text_field.dart';
 
 class FormMenuView extends StatelessWidget {
-  FormMenuView({super.key});
+  FormMenuView({Key? key, required this.parameter}) : super(key: key);
+  final dynamic parameter;
   final formKey = GlobalKey<FormBuilderState>();
 
   @override
@@ -28,16 +31,13 @@ class FormMenuView extends StatelessWidget {
     return ListView(
       children: [
         textField(name: 'menu_name', labelName: 'Menu adı'),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 6.0),
-          child: ElevatedButton(
-              onPressed: () {
-                formKey.currentState?.saveAndValidate();
-                controller.postForm(
-                    formKey.currentState?.value, formKey, postApiUrl);
-              },
-              child: const Text('Gönder')),
-        )
+        customButton(
+            btnName: 'Gönder',
+            onClick: () {
+              formKey.currentState?.saveAndValidate();
+              controller.postForm(
+                  formKey.currentState?.value, formKey, postApiUrl);
+            })
       ],
     );
   }
@@ -45,18 +45,20 @@ class FormMenuView extends StatelessWidget {
   Widget menuEditedForm(FormController controller, String updateApiUrl) {
     return ListView(
       children: [
-        textField(name: 'menu_id', labelName: 'Değişecek Menu id :'),
+        parameter != ""
+            ? disabledTextField(
+                initialValue: parameter.toString(),
+                name: 'menu_id',
+                labelName: parameter.toString())
+            : textField(name: 'menu_id', labelName: 'menü id :'),
         textField(name: 'menu_name', labelName: 'Yeni Menü adı :'),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 6.0),
-          child: ElevatedButton(
-              onPressed: () {
-                formKey.currentState?.saveAndValidate();
-                controller.updateForm(
-                    formKey.currentState?.value, formKey, updateApiUrl);
-              },
-              child: const Text('Gönder')),
-        )
+        customButton(
+            btnName: 'Gönder',
+            onClick: () {
+              formKey.currentState?.saveAndValidate();
+              controller.updateForm(
+                  formKey.currentState?.value, formKey, updateApiUrl);
+            })
       ],
     );
   }
@@ -65,16 +67,13 @@ class FormMenuView extends StatelessWidget {
     return ListView(
       children: [
         textField(name: 'menu_id', labelName: 'Silinecek Menu Id'),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 6.0),
-          child: ElevatedButton(
-              onPressed: () {
-                formKey.currentState?.saveAndValidate();
-                controller.deleteForm(
-                    formKey.currentState?.value, formKey, deletedApiUrl);
-              },
-              child: const Text('Gönder')),
-        )
+        customButton(
+            btnName: 'Gönder',
+            onClick: () {
+              formKey.currentState?.saveAndValidate();
+              controller.deleteForm(
+                  formKey.currentState?.value, formKey, deletedApiUrl);
+            })
       ],
     );
   }

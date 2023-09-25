@@ -1,7 +1,7 @@
 import 'package:backoffice/pages/form/form_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'show_modal.dart';
+import '../../form/widgets/show_modal.dart';
 
 Widget headersButton(
     {required int clickId,
@@ -20,7 +20,7 @@ Widget headersButton(
             } else {
               controller.headersTabBar.value = 2;
             }
-            showModal();
+            showModal('');
           },
           icon: Icon(
             icon ?? Icons.edit_rounded,

@@ -1,3 +1,5 @@
+import 'package:backoffice/pages/form/form_controller.dart';
+import 'package:backoffice/pages/form/widgets/show_modal.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'menu_detail_controller.dart';
@@ -5,6 +7,7 @@ import 'menu_detail_controller.dart';
 class MenuDetailContent extends StatelessWidget {
   MenuDetailContent({super.key});
   final MenuDetailController controller = Get.put(MenuDetailController());
+  final FormController formController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -20,26 +23,32 @@ class MenuDetailContent extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: controller.menuDataList.length,
                       itemBuilder: (context, index) {
-                        return Container(
-                          margin: const EdgeInsets.all(8.0),
-                          width: 100,
-                          height: 110,
-                          decoration: BoxDecoration(
-                              color: Colors.blueAccent,
-                              borderRadius: BorderRadius.circular(8)),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "id : ${controller.menuDataList[index].menuId}",
-                                style: const TextStyle(color: Colors.white),
-                              ),
-                              Text(
-                                controller.menuDataList[index].menuName
-                                    .toString(),
-                                style: const TextStyle(color: Colors.white),
-                              ),
-                            ],
+                        return InkWell(
+                          onTap: () {
+                            formController.headersTabBar.value = 1;
+                            showModal(controller.menuDataList[index].menuId);
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.all(8.0),
+                            width: 100,
+                            height: 110,
+                            decoration: BoxDecoration(
+                                color: Colors.blueAccent,
+                                borderRadius: BorderRadius.circular(8)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "id : ${controller.menuDataList[index].menuId}",
+                                  style: const TextStyle(color: Colors.white),
+                                ),
+                                Text(
+                                  controller.menuDataList[index].menuName
+                                      .toString(),
+                                  style: const TextStyle(color: Colors.white),
+                                ),
+                              ],
+                            ),
                           ),
                         );
                       })

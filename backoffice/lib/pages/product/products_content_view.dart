@@ -37,9 +37,16 @@ class ProductsContent extends StatelessWidget {
                             Container(
                               margin:
                                   const EdgeInsets.symmetric(horizontal: 16.0),
-                              child: Text(
-                                controller.productListData[index].productName
-                                    .toString(),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    controller
+                                        .productListData[index].productName
+                                        .toString(),
+                                  ),
+                                  Text(
+                                      " - id : ${controller.productListData[index].productId}")
+                                ],
                               ),
                             ),
                           ],

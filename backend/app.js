@@ -35,6 +35,10 @@ app.get("/products", productsController.products);
 
 app.post("/newProduct", productsController.newProduct);
 
+app.post("/updateProduct", productsController.updateProduct);
+
+app.post("/deleteProduct", productsController.deleteProduct);
+
 app.get("/me", tokenCheck, authController.me);
 
 app.get("/users", authController.usersInfo);
