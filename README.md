@@ -52,3 +52,11 @@
   <p>"Node Js" was used for the service.</p>
   <p>"Postman" was used for requests</p>
   <p>"Localhost" was used</p>
+
+  <h3>Backoffice</h3>
+  <p>I created a backoffice to edit product, user and menu entries. Actually ,we can see commands like "POST","UPDATE","DELETE" so i created backoffice.</p>
+  <p>There is important here. I created backoffice in using flutter web </p>
+    <h3>Backoffice</h3
+    <td><img src="https://github.com/Ozberksenn/shopkeeper/assets/96706849/ef391840-fa20-48f7-8c17-434a29861d73" width="400px"/></td>
+    <td><img src="https://github.com/Ozberksenn/shopkeeper/assets/96706849/62396dc6-1a7d-40b2-9fde-f1156e035fd6" width="400px"/></td>
+    <td><img src="https://github.com/Ozberksenn/shopkeeper/assets/96706849/d317326d-58f8-4756-82a7-c87098acfc90" width="400px"/></td>
