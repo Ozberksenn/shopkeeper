@@ -3,6 +3,7 @@ import 'package:backoffice/widgets/custom_button.dart';
 import 'package:backoffice/widgets/disabled_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
 import '../../../widgets/text_field.dart';
 
@@ -30,7 +31,10 @@ class FormMenuView extends StatelessWidget {
   Widget menuPostForm(FormController controller, String postApiUrl) {
     return ListView(
       children: [
-        textField(name: 'menu_name', labelName: 'Menu adı'),
+        textField(
+            name: 'menu_name',
+            labelName: 'Menu adı',
+            validator: FormBuilderValidators.required()),
         customButton(
             btnName: 'Gönder',
             onClick: () {
@@ -45,13 +49,19 @@ class FormMenuView extends StatelessWidget {
   Widget menuEditedForm(FormController controller, String updateApiUrl) {
     return ListView(
       children: [
-        parameter != ""
+        parameter != null
             ? disabledTextField(
                 initialValue: parameter.toString(),
                 name: 'menu_id',
                 labelName: parameter.toString())
-            : textField(name: 'menu_id', labelName: 'menü id :'),
-        textField(name: 'menu_name', labelName: 'Yeni Menü adı :'),
+            : textField(
+                name: 'menu_id',
+                labelName: 'menü id :',
+                validator: FormBuilderValidators.required()),
+        textField(
+            name: 'menu_name',
+            labelName: 'Yeni Menü adı :',
+            validator: FormBuilderValidators.required()),
         customButton(
             btnName: 'Gönder',
             onClick: () {
@@ -66,7 +76,10 @@ class FormMenuView extends StatelessWidget {
   Widget menuDeletedForm(FormController controller, String deletedApiUrl) {
     return ListView(
       children: [
-        textField(name: 'menu_id', labelName: 'Silinecek Menu Id'),
+        textField(
+            name: 'menu_id',
+            labelName: 'silinecek menu id',
+            validator: FormBuilderValidators.required()),
         customButton(
             btnName: 'Gönder',
             onClick: () {

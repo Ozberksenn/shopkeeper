@@ -47,9 +47,13 @@ Future<dynamic> showModal(dynamic parameter) {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(6.0)),
               child: controller.menuId.value == 0
-                  ? FormUserView()
+                  ? FormUserView(
+                      parameter: parameter,
+                    )
                   : controller.menuId.value == 1
-                      ? FormProductsView()
+                      ? FormProductsView(
+                          parameter: parameter,
+                        )
                       : controller.menuId.value == 2
                           ? FormMenuView(parameter: parameter)
                           : Container()),

@@ -20,7 +20,7 @@ Widget headersButton(
             } else {
               controller.headersTabBar.value = 2;
             }
-            showModal('');
+            showModal(null);
           },
           icon: Icon(
             icon ?? Icons.edit_rounded,

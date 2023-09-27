@@ -15,7 +15,7 @@ Widget disabledTextField(
           border: OutlineInputBorder(
               borderSide: BorderSide.none,
               borderRadius: BorderRadius.circular(6)),
-          labelText: labelName ?? ''),
+          hintText: labelName ?? ''),
     ),
   );
 }
