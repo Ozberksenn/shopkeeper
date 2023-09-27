@@ -56,7 +56,25 @@
   <h3>Backoffice</h3>
   <p>I created a backoffice to edit product, user and menu entries. Actually ,we can see commands like "POST","UPDATE","DELETE" so i created backoffice.</p>
   <p>There is important here. I created backoffice in using flutter web </p>
-    <h3>Backoffice</h3
-    <td><img src="https://github.com/Ozberksenn/shopkeeper/assets/96706849/ef391840-fa20-48f7-8c17-434a29861d73" width="400px"/></td>
-    <td><img src="https://github.com/Ozberksenn/shopkeeper/assets/96706849/62396dc6-1a7d-40b2-9fde-f1156e035fd6" width="400px"/></td>
-    <td><img src="https://github.com/Ozberksenn/shopkeeper/assets/96706849/d317326d-58f8-4756-82a7-c87098acfc90" width="400px"/></td>
+  <table>
+    <tr>
+        <h3>Home Screens</h3>
+        <td><img src="https://github.com/Ozberksenn/shopkeeper/assets/96706849/ef391840-fa20-48f7-8c17-434a29861d73" width="600px"/></td>
+        <td><img src="https://github.com/Ozberksenn/shopkeeper/assets/96706849/62396dc6-1a7d-40b2-9fde-f1156e035fd6" width="600px"/></td>
+        <td><img src="https://github.com/Ozberksenn/shopkeeper/assets/96706849/d317326d-58f8-4756-82a7-c87098acfc90" width="600px"/></td>
+    </tr>
+    
+  </table>
+  <table>
+   <tr>
+      <h3>Forms</h3>
+      <td><img src="https://github.com/Ozberksenn/shopkeeper/assets/96706849/0edae898-d33a-4786-a02a-b3a8f238bdc2" width="600px"/></td>
+       <td><img src="https://github.com/Ozberksenn/shopkeeper/assets/96706849/6604f629-4ab8-4d65-82a2-2a23a0fd73b0" width="600px"/></td>
+    </tr>
+    
+  </table>
+ 
+
+
+   
+    
